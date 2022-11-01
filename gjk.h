@@ -1,4 +1,4 @@
-#ifdef __cplusplus 
+﻿#ifdef __cplusplus 
 extern "C" {
 #endif
 
@@ -169,23 +169,6 @@ int gjk (const vec2 * vertices1, size_t count1,
     return 0;
 }
 
-//-----------------------------------------------------------------------------
-
-#include <stdlib.h>
-#include <float.h>
-
-float Perturbation()
-{
-	return ((float)rand() / (float)RAND_MAX) * FLT_EPSILON * 100.0f * ((rand() % 2) ? 1.0f : -1.0f);
-}
-
-vec2 Jostle(vec2 a)
-{
-	vec2 b;
-	b.x = a.x + Perturbation();
-	b.y = a.y + Perturbation();
-	return b;
-}
 #ifdef __cplusplus 
 }
 #endif
